@@ -4,8 +4,8 @@
   "description": "WordPress plugin for WC Logrono 2025 Talk, demonstrating block bindings and Interactivity API.",
   "main": "index.js",
   "scripts": {
-    "start": "wp-scripts start",
-    "build": "wp-scripts build"
+    "start": "wp-scripts start --experimental-modules",
+    "build": "wp-scripts build --experimental-modules"
   },
   "keywords": [],
   "author": "",

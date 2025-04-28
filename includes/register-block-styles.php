@@ -39,4 +39,3 @@ function wclg_register_block_styles()
         )
     );
 }
-add_action('init', 'wclg_register_block_styles');

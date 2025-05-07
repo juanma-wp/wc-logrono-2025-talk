@@ -25,7 +25,7 @@ define('API_BASE_URL', 'https://thequoteshub.com/api');
 
 // Include necessary files.
 // Note: The included files likely need updates to use the new constants and plugin context.
-require_once WC_LOGRONO_2025_PLUGIN_DIR . 'includes/register-source-block-binding.php';
+require_once WC_LOGRONO_2025_PLUGIN_DIR . 'includes/render_block_core_quote_variation.php';
 require_once WC_LOGRONO_2025_PLUGIN_DIR . 'includes/enqueue-assets.php';
 require_once WC_LOGRONO_2025_PLUGIN_DIR . 'includes/register-block-styles.php';
 require_once WC_LOGRONO_2025_PLUGIN_DIR . 'includes/register-block-patterns.php';
@@ -39,14 +39,14 @@ add_action('init', 'wclg_register_patterns');
 
 add_action('init', 'wclg_register_block_styles');
 
-add_action('init', 'wclg_register_block_bindings_source');
-
 // Interactivity Hooks
 add_action('init', 'wclg_register_interactive_scripts');
 add_filter('render_block_core/group', 'wclg_filter_group_block_add_interactivity_directives', 10, 2);
 
 // Asset Enqueuing Hooks
 add_action('enqueue_block_editor_assets', 'wclg_enqueue_block_variations_script');
+
+add_filter('render_block_core/quote', 'wclg_render_block_core_quote_variation', 10, 2);
 
 
 // --- Optional: Activation/Deactivation Hooks ---

@@ -43,7 +43,7 @@ add_action('init', 'wclg_register_block_bindings_source');
 
 // Interactivity Hooks
 add_action('init', 'wclg_register_interactive_scripts');
-add_filter('render_block_core/group', 'wclg_filter_group_block_enqueue_script', 10, 2);
+add_filter('render_block_core/group', 'wclg_filter_group_block_add_interactivity_directives', 10, 2);
 
 // Asset Enqueuing Hooks
 add_action('enqueue_block_editor_assets', 'wclg_enqueue_block_variations_script');

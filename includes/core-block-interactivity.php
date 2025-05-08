@@ -69,7 +69,31 @@ function wclg_filter_group_block_add_interactivity_directives($block_content, $b
             return $block_content;
         }
 
-        // ... more code
+        // --- Process nested Button block ---
+        // The processor continues from its current position.
+        while ($p->next_tag(array('tag_name' => 'a', 'class_name' => 'wp-block-button__link'))) {
+            // Check if the class attribute exists and contains the target class.
+            // This check is simplified; a more robust check might be needed depending on HTML structure.
+            if ($p->get_attribute('class') && str_contains($p->get_attribute('class'), 'wp-block-button__link')) {
+                $p->set_attribute('data-wp-on--click', 'actions.playOrStop');
+                $p->set_attribute('data-wp-text', 'context.buttonText');
+                // Optional: break if we are sure there's only one such button.
+                break; // Assuming only one interactive button per group
+            }
+        }
+
+        // Seek back to the position after the main group tag to search for the video.
+        $p->seek('main_group_tag');
+
+        // --- Process nested Video block ---
+        // Find the video tag within the group, starting search from after the group tag.
+        while ($p->next_tag(array('tag_name' => 'video'))) {
+            // Assuming any video tag inside this group is the target.
+            // A class check could be added here if needed: $p->get_attribute('class') && str_contains($p->get_attribute('class'), 'interactive-block--video')
+            $p->set_attribute('data-wp-watch', 'callbacks.videoMotion');
+            // Optional: break if we are sure there's only one such video.
+            break; // Assuming only one interactive video per group
+        }
 
         // Return the fully modified HTML.
         return $p->get_updated_html();

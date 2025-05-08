@@ -16,21 +16,18 @@ if (! defined('ABSPATH')) {
  */
 function wclg_register_interactive_scripts()
 {
-    // Ensure the plugin URL constant is defined before using it.
-    // Define a fallback version if the constant is not set.
-    $plugin_version = defined('WC_LOGRONO_2025_VERSION') ? WC_LOGRONO_2025_VERSION : null;
+    $iapi_script_asset_path = WC_LOGRONO_2025_PLUGIN_DIR . "build/iapi.asset.php";
+    $iapi_script_asset = require($iapi_script_asset_path);
 
-    if (defined('WC_LOGRONO_2025_PLUGIN_URL')) {
-        wp_register_script_module(
-            'wclg/media-text-interactive', // The handle being registered
-            WC_LOGRONO_2025_PLUGIN_URL . 'build/iapi.js', // The script file
-            array('wp-interactivity'), // Dependencies
-            $plugin_version // Version
-        );
-    } else {
-        // Log an error or handle the case where the constant is not defined.
+    if (!defined('WC_LOGRONO_2025_PLUGIN_URL')) {
         error_log('WC_LOGRONO_2025_PLUGIN_URL constant is not defined when registering script module in core-block-interactivity.php');
     }
+    wp_register_script_module(
+        'wclg/media-text-interactive', // The handle being registered
+        WC_LOGRONO_2025_PLUGIN_URL . 'build/iapi.js', // The script file
+        $iapi_script_asset['dependencies'], // Dependencies
+        $iapi_script_asset['version'] // Version
+    );
 }
 // Note: add_action( 'init', 'wclg_register_interactive_scripts' ); should be in the main plugin file.
 

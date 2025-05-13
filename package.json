@@ -12,7 +12,6 @@
   "license": "ISC",
   "devDependencies": {
     "@wordpress/scripts": "^28.3.0",
-    "path": "^0.12.7",
-    "webpack-remove-empty-scripts": "^1.0.4"
+    "path": "^0.12.7"
   }
 }

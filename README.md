@@ -1,8 +1,13 @@
 # WC Logrono 2025 Talk Plugin
 
+([live demo](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/juanma-wp/wc-logrono-2025-talk/refs/heads/trunk/_playground/blueprint.json))
+
+This repo contains a plugin with examples that showcase the ideas explained in the talk ["¿Realmente necesitas desarrollar un bloque nuevo? Veamos algunas alternativas"](https://logrono.wordcamp.org/2025/session/realmente-necesitas-desarrollar-un-bloque-nuevo-veamos-algunas-alternativas/)
+at [WordCamp Logroño (Spain) 2025](https://logrono.wordcamp.org/2025)
+
 This plugin demonstrates various ways to extend WordPress core blocks without creating full custom blocks, focusing on Block Bindings and the Interactivity API.
 
-It was originally based on the [Developer Hours - Alternatives to Custom Blocks](https://www.meetup.com/es-ES/learn-wordpress-online-workshops/events/301860423/) project.
+These examples are inspired on the ideas shared on [Developer Hours - Alternatives to Custom Blocks](https://www.meetup.com/es-ES/learn-wordpress-online-workshops/events/301860423/).
 
 ## Features
 

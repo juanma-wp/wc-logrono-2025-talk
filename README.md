@@ -1,6 +1,8 @@
 # WC Logrono 2025 Talk Plugin
 
+<!--
 [live demo](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/juanma-wp/wc-logrono-2025-talk/refs/heads/trunk/_playground/blueprint.json)
+-->
 
 This repo contains a plugin with examples that showcase the ideas explained in the talk ["¿Realmente necesitas desarrollar un bloque nuevo? Veamos algunas alternativas"](https://logrono.wordcamp.org/2025/session/realmente-necesitas-desarrollar-un-bloque-nuevo-veamos-algunas-alternativas/)
 at [WordCamp Logroño (Spain) 2025](https://logrono.wordcamp.org/2025)

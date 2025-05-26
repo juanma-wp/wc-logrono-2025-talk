@@ -29,7 +29,7 @@ function wclg_render_block_core_quote_variation($block_content, $block)
     $data = json_decode($body, true);
 
     if (json_last_error() !== JSON_ERROR_NONE) {
-        return $block_content;
+        return  '<p><em>Error fetching quotes</em></p>' . $block_content;
     }
 
     if (isset($data['quotes']) && is_array($data['quotes']) && !empty($data['quotes'])) {
